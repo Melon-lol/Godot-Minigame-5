@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 func _increaseConeHitCount () -> void:
 	conesHitCount+= 1
-	
+	conesText.text = "cone hit count: %.0f" % conesHitCount

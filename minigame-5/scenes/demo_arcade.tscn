@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d2xf4wuh2u4t6"]
+[gd_scene load_steps=25 format=3 uid="uid://d2xf4wuh2u4t6"]
 
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://scenes/vehicle_controller.tscn" id="1_lup1j"]
 [ext_resource type="PackedScene" uid="uid://fo6kt54q87tf" path="res://scenes/arcade_car.tscn" id="2_oiv4q"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://tljwmy8egh4f" path="res://scenes/barrier.tscn" id="14_shk6o"]
 [ext_resource type="Script" uid="uid://bm5ob0vel8fia" path="res://scripts/finish_line.gd" id="15_qr4q7"]
 [ext_resource type="PackedScene" uid="uid://bk2nkg4hj6g" path="res://props/finish line.fbx" id="16_7x2w3"]
+[ext_resource type="PackedScene" uid="uid://bkn0qfs7lvsll" path="res://scenes/lamppost.tscn" id="17_7x2w3"]
+[ext_resource type="PackedScene" uid="uid://ce5wcc17u421b" path="res://scenes/bush.tscn" id="18_1qq5m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mgdar"]
 font_size = 40
@@ -196,5 +198,29 @@ script = ExtResource("15_qr4q7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Track/FinishLine"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087402344, 2.732729, 0.15655518)
 shape = SubResource("BoxShape3D_1qq5m")
+
+[node name="lamppost" parent="Track" instance=ExtResource("17_7x2w3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.080122, 0, -10.165495)
+
+[node name="lamppost2" parent="Track" instance=ExtResource("17_7x2w3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.325714, -0.4103806, -11.12826)
+
+[node name="lamppost3" parent="Track" instance=ExtResource("17_7x2w3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.334989, -0.015035383, -15.763729)
+
+[node name="lamppost4" parent="Track" instance=ExtResource("17_7x2w3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2424045, -0.08037823, -14.495365)
+
+[node name="BUSH" parent="Track" instance=ExtResource("18_1qq5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4028616, -0.11558998, -9.523373)
+
+[node name="BUSH2" parent="Track" instance=ExtResource("18_1qq5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5586963, -0.08255625, -9.586048)
+
+[node name="BUSH3" parent="Track" instance=ExtResource("18_1qq5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5467556, -0.07862878, -21.690159)
+
+[node name="BUSH4" parent="Track" instance=ExtResource("18_1qq5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1168537, -0.080931425, -27.231613)
 
 [connection signal="body_entered" from="Track/FinishLine" to="Track/FinishLine" method="_on_area_3d_body_entered"]

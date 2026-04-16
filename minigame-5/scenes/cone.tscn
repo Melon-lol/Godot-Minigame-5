@@ -19,3 +19,5 @@ shape = SubResource("BoxShape3D_avd8m")
 
 [node name="hazzard_cone_12" parent="." instance=ExtResource("1_04qlx")]
 transform = Transform3D(0.9607695, 0, 0.2773482, 0, 1, 0, -0.2773482, 0, 0.9607695, 0, -0.7277, 0)
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
